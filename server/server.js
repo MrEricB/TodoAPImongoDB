@@ -7,6 +7,7 @@ var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 
 var app = express();
+const PORT = process.env.PORT || 3000;
 
 // middleware
 app.use(bodyParser.json());
@@ -60,8 +61,8 @@ app.get('/todos/:id', (req, res) => {
 
 
 // start the server
-app.listen(3000, () => {
-  console.log('Started on port 3000');
+app.listen(PORT, () => {
+  console.log(`Sever started on PORT: ${PORT}`);
 });
 
 // export server for testing in tests/sever.test.js
